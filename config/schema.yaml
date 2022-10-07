@@ -65,4 +65,5 @@ transform_features:
   - DurationOfPitch
   - MonthlyIncome
 
+
 target_column: ProdTaken

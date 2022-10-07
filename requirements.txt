@@ -11,4 +11,5 @@ xgboost
 catboost
 boto3
 python-multipart
+dill
 - e.

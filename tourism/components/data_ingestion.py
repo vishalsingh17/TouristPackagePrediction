@@ -97,10 +97,6 @@ class DataIngestion:
             df = self.get_data_from_mongodb()
 
             schema_config = self.utils.read_schema_config_file()
-            
-            drop_columns = schema_config['Drop_columns']
-            
-            df = df.drop(drop_columns, axis=1)
 
             logging.info("Got the data from mongodb")
 
