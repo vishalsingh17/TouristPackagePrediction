@@ -1,0 +1,14 @@
+jupyter
+pymongo
+pandas
+evidently
+category-encoders
+from-root
+matplotlib
+seaborn
+imblearn
+xgboost
+catboost
+boto3
+python-multipart
+- e.

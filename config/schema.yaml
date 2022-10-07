@@ -1,0 +1,68 @@
+columns:
+  - CustomerID: int
+  - ProdTaken: int  
+  - Age: float
+  - CityTier: int
+  - DurationOfPitch: float
+  - NumberOfPersonVisiting: int
+  - NumberOfFollowups: float
+  - PreferredPropertyStar: float
+  - NumberOfTrips: float
+  - Passport: int
+  - PitchSatisfactionScore: int
+  - OwnCar: int
+  - NumberOfChildrenVisiting: float
+  - MonthlyIncome: float
+  - TypeofContact: categorical
+  - Occupation: categorical
+  - Gender: categorical
+  - ProductPitched: categorical
+  - MaritalStatus: categorical
+  - Designation: categorical
+
+numerical_columns:
+  - CustomerID
+  - ProdTaken
+  - Age
+  - CityTier
+  - DurationOfPitch
+  - NumberOfPersonVisiting
+  - NumberOfFollowups
+  - PreferredPropertyStar
+  - NumberOfTrips
+  - Passport
+  - PitchSatisfactionScore
+  - OwnCar
+  - NumberOfChildrenVisiting
+  - MonthlyIncome
+
+cat_features:
+  - TypeofContact
+  - Occupation
+  - Gender
+  - ProductPitched
+  - MaritalStatus
+  - Designation
+
+
+disc_feature:
+  - CityTier
+  - NumberOfPersonVisiting
+  - NumberOfFollowups
+  - PreferredPropertyStar
+  - NumberOfTrips
+  - Passport
+  - PitchSatisfactionScore
+  - OwnCar
+  - NumberOfChildrenVisiting
+
+continuous_features:
+  - Age
+  - DurationOfPitch
+  - MonthlyIncome
+
+transform_features:
+  - DurationOfPitch
+  - MonthlyIncome
+
+target_column: ProdTaken
