@@ -114,7 +114,7 @@ docker run -d -p 8080:8080 <IMAGEID>
 - AdaBoost Classifier
 - RandomForest Classifier
 
-From these above models after hyperparameter optimization we selected Top two models which were KNeighbors Classifier and Random Forest Classifier and used the following in Pipeline.
+From these above models after hyperparameter optimization we selected Top two models which were XGBClassifier and Random Forest Classifier and used the following in Pipeline.
 
 GridSearchCV is used for Hyperparameter Optimization in the pipeline.
 
