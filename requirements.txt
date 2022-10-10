@@ -12,4 +12,7 @@ catboost
 boto3
 python-multipart
 dill
+fastapi[all]
+mypy-boto3-s3
+
 - e.

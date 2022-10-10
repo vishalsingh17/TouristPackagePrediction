@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Tourist Package Prediction</title>
+    <link rel="stylesheet" href="{{ url_for('static', path='/css/style.css')}}">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-iYQeCzEYFbKjA/T2uDLTpkwGzCiq6soy8tYaI1GyVh/UjpbCx/TYkiZhlZB6+fzT" crossorigin="anonymous">
+  </head>
+  <body>
+    <nav class="navbar navbar-light bg-light static-top">
+        <div class="container-fluid">
+           <a class="navbar-brand" href="https://ineuron.ai"><img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAIkAAAAlCAMAAABBJDpuAAAAVFBMVEX/fgD/iQA7NzIyMjMnNYInNYEnNYInNYEzMzInNYQnNYETJzsnNYIwN1wxMjNoTis4O1YrNm0xOF47PE9DP0dEQEVpTVkAJJ4nNYEOLJHJbiAzMzOmmmHRAAAAFnRSTlOh/vu+986oen9fP2UqEzQkFAIDAAEEILVBJQAAA3FJREFUWMPNmO2WoyAMQG0VBARtdVRs3/89NwkgaF1rd2aOm18tIrnkgwSz7n+R7LcV1ELkeS7E7VySRlyfQXJhTiO55c+liP4cEuH1X8E7gaV+S3Jv2zYZ/Vr+/Sdx2vP6doc/fSPcf/GOpLSFVXFUW8t+giRP47TOd60yk1hbxIhSP0ACKPWrvw7YBIT/lcQY84G3Wk17ugWQfg5UsQJpjflKSLQi7xTWyk0SXTJ4VnB5D1yccxmp4Z+mX5KGNS+SPXVNll0ulyxL0wYmloBB6zL/MpCoAgjAJiUM6w0SboMwPUdRogvNKcNM3smFdRvEcJJkKcflQa+X0pNIfBGW0zKqjyQtw4VLKQlI7ZLgdrRNSZDjMQx2GB4pCkxkCrfGWUTJ0Egan6muCHgJCUwtnCk0mrJ9Q8K5LUqtdSfynkAedhynaRqngVDaXLiJEAzkFkM71IuIlWRYtSQpbXSZDvQ7JPCei9brs+oaABkn74LRIkpFaVxGnzjvIxTYREOoEwn5r01JTDRTcO87Eu3zNUeTPKZpjrIRrNIDCjzALbPk7LJMIokOEQu2K7yKQAKvFDF9pVe0R+LGb7h1MMkw2ijjA/1zhSfSphvEAChXJEhAqwYStIJWXnTpvbdH4hTUwSQ2JRmQpILDLYbB7J41SYiLcNozu5Z3JMo7RxBJahI7WSRByCMkqJt9hySESbVJcvmARJGFExJmdBSl2oM2+T4JLWfgaGFptizlPUm1FydHSdyZ7UnS4ySph2kS0kJrkvr5NJg7dnrJnfxgxPozRPGtkyPNOxtaiDvbIAF9L+5B5zTI2BwlwXmM+U3zReav3o0F8oUEFFZ42McDZYomOUziFmezgWyo251Uc1nyKJol7URCEvIYUEbHYaEGQi9C9egwCdVfHwiaajfjKMUcHcRacCylhWJbJDfq47EEDhYqoIWjHnwDXZPpPiChPQelLU+Cbm4w50FmYgkvFwpiWwCC/Um/SLcNElOC9RVj6qWpCiEMvRUK4zLpdKmPw8rVldy/qxjn60wLrVLWJIPLiZJRr3fsvnOHPvare+lB93tb37T20D82jqOt+zNuXhuNvNhp7X+PpHb3rvV9R5xjE2SpyCN9ffQO+GtWIZr5Xnytz4gTMIRYfys47/uJEXny/aQ/95tSUwmU+uRvSp/IHzQqZYpYrQmxAAAAAElFTkSuQmCC" /></a>
+        </div>
+     </nav>
+    <section>
+        <div class="container-fluid">
+            <div class="container">
+                <form action="/" method="post">
+                    <h1>Tourist Data Form</h1>
+                    <div class="row">
+                        <div class="mb-3 col">
+                            <label for="Age">Age</label>
+                            <input type="number" class="form-control" id="Age" name="Age" min="0" max="80" placeholder="0 - 80 years" required="required">
+                          </div>
+
+                          <div class="mb-3 col">
+                            <label for="CityTier">City Tier</label>
+                            <select class="form-control" id="CityTier" name="CityTier" placeholder="CityTier" required="required">
+                                <option value="" disabled selected>Select Your City Tier</option>
+                                <option value=1>Tier 1</option>
+                                <option value = 2>Tier 2</option>
+                                <option value = 3>Tier 3</option>
+                            </select>
+                          </div>
+            
+                          <div class="mb-3 col">
+                            <label for="DurationOfPitch">Duration Of Pitch</label>
+                            <input type="number" class="form-control" id="DurationOfPitch" name="DurationOfPitch" min="1" max="200" step="1" placeholder="Enter in minutes" required="required">
+                          </div>
+            
+                          <div class="mb-3 col">
+                            <label for="NumberOfPersonVisiting">Number of Person Visiting</label>
+                            <select class="form-control" id="NumberOfPersonVisiting" name="NumberOfPersonVisiting" placeholder="NumberOfPersonVisiting" required="required">
+                                <option value="" disabled selected>Select Number of Person Visiting</option>
+                                <option value = 1>1</option>
+                                <option value = 2>2</option>
+                                <option value = 3>3</option>
+                                <option value = 4>4</option>
+                                <option value = 5>5</option>
+                                <option value = 6>6</option>
+                                <option value = 7>7</option>
+                                <option value = 8>8</option>
+                            </select>
+                          </div>
+
+            
+                          <div class="mb-3 col">
+                            <label for="NumberOfFollowups">Number of Followups</label>
+                            <select class="form-control" id="NumberOfFollowups" name="NumberOfFollowups" placeholder="NumberOfFollowups" required="required">
+                                <option value="" disabled selected>Select Number of Followups</option>
+                                <option value = 1>1</option>
+                                <option value = 2>2</option>
+                                <option value = 3>3</option>
+                                <option value = 4>4</option>
+                                <option value = 5>5</option>
+                                <option value = 6>6</option>
+                                <option value = 7>7</option>
+                                <option value = 8>8</option>
+                                <option value = 9>9</option>
+                                <option value = 10>10</option>
+                            </select>
+                          </div>
+                    
+                    </div>
+                    
+                    <div class="row">
+
+                        <div class="mb-3 col">
+                            <label for="PreferredPropertyStar">Preferred Property Star</label>
+                            <select class="form-control" id="PreferredPropertyStar" name="PreferredPropertyStar" placeholder="PreferredPropertyStar" required="required">
+                                <option value="" disabled selected>Select Preferred Property Star</option>
+                                <option value = 1>1</option>
+                                <option value = 2>2</option>
+                                <option value = 3>3</option>
+                                <option value = 4>4</option>
+                                <option value = 5>5</option>
+                            </select>
+                        </div>
+        
+                        <div class="mb-3 col">
+                            <label for="NumberOfTrips">Number of Trips</label>
+                            <input type="number" class="form-control" id="NumberOfTrips" name="NumberOfTrips" min="1" max="50" step="1" placeholder="Enter Number of Trips" required="required">
+                        </div>
+        
+                        <div class="mb-3 col">
+                            <label for="Passport">Passport Information</label>
+                            <select class="form-control" id="Passport" name="Passport" placeholder="Passport" required="required">
+                                <option value="" disabled selected>Do you have a passport</option>
+                                <option value = 1>Yes</option>
+                                <option value = 0>No</option>
+                            </select>
+                        </div>
+        
+                        <div class="mb-3 col">
+                            <label for="PitchSatisfactionScore">Pitch Satisfaction Score</label>
+                            <select class="form-control" id="PitchSatisfactionScore" name="PitchSatisfactionScore" placeholder="PitchSatisfactionScore" required="required">
+                                <option value="" disabled selected>Select Pitch Satisfaction Score</option>
+                                <option value = 1>1</option>
+                                <option value = 2>2</option>
+                                <option value = 3>3</option>
+                                <option value = 4>4</option>
+                                <option value = 5>5</option>
+                            </select>
+                        </div>
+        
+                    </div>
+
+                    <div class="row">
+                        <div class="mb-3 col">
+                            <label for="OwnCar">Car Details</label>
+                            <select class="form-control" id="OwnCar" name="OwnCar" placeholder="OwnCar" required="required">
+                                <option value="" disabled selected>Do you own a car</option>
+                                <option value = 1>Yes</option>
+                                <option value = 0>No</option>
+                            </select>
+                        </div>
+
+                        <div class="mb-3 col">
+                            <label for="NumberOfChildrenVisiting">Number of Children Visiting</label>
+                            <select class="form-control" id="NumberOfChildrenVisiting" name="NumberOfChildrenVisiting" placeholder="NumberOfChildrenVisiting" required="required">
+                                <option value="" disabled selected>Select Number of Children Visiting</option>
+                                <option value = 0>0</option>
+                                <option value = 1>1</option>
+                                <option value = 2>2</option>
+                                <option value = 3>3</option>
+                                <option value = 4>4</option>
+                                <option value = 5>5</option>
+                            </select>
+                        </div>
+                        
+                        <div class="mb-3 col">
+                            <label for="MonthlyIncome">Income Details</label>
+                            <input type="number" class="form-control" id="MonthlyIncome" name="MonthlyIncome" min="1000" max="250000" step="1" placeholder="Enter Monthly Income" required="required">
+                        </div>
+                        
+                        <div class="mb-3 col">
+                            <label for="TypeofContact">Type of Contact</label>
+                            <select class="form-control" id="TypeofContact" name="TypeofContact" placeholder="TypeofContact" required="required">
+                                <option value="" disabled selected>Select Number of Children Visiting</option>
+                                <option value = 'Company Invited'>Company Invited</option>
+                                <option value = 'Self Enquiry'>Self Enquiry</option>
+                                <!-- <option value = nan>No Data</option> -->
+                            </select>
+                        </div>
+
+                    </div>
+
+                <div class="row">
+
+                        <div class="mb-3 col">
+                            <label for="Occupation">Occupation</label>
+                            <select class="form-control" id="Occupation" name="Occupation" placeholder="Occupation" required="required">
+                                <option value="" disabled selected>Select Your Occupation</option>
+                                <option value = 'Salaried'>Salaried</option>
+                                <option value = 'Free Lancer'>Free Lancer</option>
+                                <option value = 'Small Business'>Small Business</option>
+                                <option value = 'Large Business'>Large Business</option>
+                            </select>
+                        </div>
+        
+                        <div class="mb-3 col">
+                            <label for="Gender">Gender</label>
+                            <select class="form-control" id="Gender" name="Gender" placeholder="Gender" required="required">
+                                <option value="" disabled selected>What's your gender?</option>
+                                <option value = "Male">Male</option>
+                                <option value = "Female">Female</option>
+                            </select>
+                        </div>
+        
+                        <div class="mb-3 col">
+                            <label for="ProductPitched">Product Pitched</label>
+                            <select class="form-control" id="ProductPitched" name="ProductPitched" placeholder="ProductPitched" required="required">
+                                <option value="" disabled selected>Select Product Pitched</option>
+                                <option value = 'Deluxe'>Deluxe</option>
+                                <option value = 'Basic'>Basic</option>
+                                <option value = 'Standard'>Standard</option>
+                                <option value = 'Super Deluxe'>Super Deluxe</option>
+                                <option value = 'King'>King</option>
+                            </select>
+                        </div>
+        
+                </div>
+
+                <div class="row">
+                    <div class="mb-3 col">
+                        <label for="MaritalStatus">Marital Status</label>
+                        <select class="form-control" id="MaritalStatus" name="MaritalStatus" placeholder="MaritalStatus" required="required">
+                            <option value="" disabled selected>What's your marital status?</option>
+                            <option value = "Single">Single</option>
+                            <option value = "Divorced">Divorced</option>
+                            <option value = "Married">Married</option>
+                            <option value = "Unmarried">Unmarried</option>
+                        </select>
+                    </div>
+    
+                    <div class="mb-3 col">
+                        <label for="Designation">Designation</label>
+                        <select class="form-control" id="Designation" name="Designation" placeholder="Designation" required="required">
+                            <option value="" disabled selected>What's your Designation?</option>
+                            <option value = 'Manager'>Manager</option>
+                            <option value = 'Executive'>Executive</option>
+                            <option value = 'Senior Manager'>Senior Manager</option>
+                            <option value = 'AVP'>AVP</option>
+                            <option value = 'VP'>VP</option>
+                        </select>
+                    </div>
+                    <input class="btn btn-primary" type="submit" value="Package Prediction" required />
+                </div>
+
+                </form>
+            </div>
+            <div class="text-center text-black">
+                <h3 class="display-4 fw-bolder">{{context}} </h3>
+            </div>
+        </div>
+    </section>
+    <script src="https://code.jquery.com/jquery-3.2.1.js"></script>
+    <script type="text/javascript">
+        $(".input").focus(function(){
+            $(this).parent().addClass("focus");
+        }).blur(function(){
+            if($(this).val() === ''){
+                $(this).parent().removeClass("focus");
+            }
+        })
+    </script>
+  </body>
+</html>

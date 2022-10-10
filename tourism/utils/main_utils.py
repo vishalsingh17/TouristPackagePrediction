@@ -101,8 +101,8 @@ class MainUtils:
         try:
             if model_name.lower().startswith("xgb") is True:
                 model = xgboost.__dict__[model_name]()
-                
-            elif model_name.lower().startswith("cat")is True:
+
+            elif model_name.lower().startswith("cat") is True:
                 model = catboost.__dict__[model_name]()
 
             else:

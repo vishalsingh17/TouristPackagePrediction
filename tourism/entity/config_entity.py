@@ -6,7 +6,7 @@ from pymongo import MongoClient
 class S3Config:
     def __init__(self):
         self.IO_FILES_BUCKET = "tourism-io-files"
-        
+
     def get_s3_config(self):
         return self.__dict__
 

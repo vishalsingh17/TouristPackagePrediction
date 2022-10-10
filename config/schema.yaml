@@ -1,4 +1,4 @@
-columns:
+ColumnNames:
   - CustomerID: int
   - ProdTaken: int  
   - Age: float
@@ -20,7 +20,7 @@ columns:
   - MaritalStatus: categorical
   - Designation: categorical
 
-numerical_columns:
+Numerical_columns:
   - CustomerID
   - ProdTaken
   - Age
@@ -36,7 +36,7 @@ numerical_columns:
   - NumberOfChildrenVisiting
   - MonthlyIncome
 
-cat_features:
+Categorical_columns:
   - TypeofContact
   - Occupation
   - Gender
@@ -45,7 +45,7 @@ cat_features:
   - Designation
 
 
-disc_feature:
+Discrete_columns:
   - CityTier
   - NumberOfPersonVisiting
   - NumberOfFollowups
@@ -56,14 +56,17 @@ disc_feature:
   - OwnCar
   - NumberOfChildrenVisiting
 
-continuous_features:
+Continuous_columns:
   - Age
   - DurationOfPitch
   - MonthlyIncome
 
-transform_features:
+Transformation_columns:
   - DurationOfPitch
   - MonthlyIncome
 
+Drop_columns:
+  - CustomerID
 
-target_column: ProdTaken
+target_column: 
+  - ProdTaken

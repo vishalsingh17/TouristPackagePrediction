@@ -99,7 +99,9 @@ class MongoDBOperation:
 
             collection = database.get_collection(collection_name)
 
-            logging.info("Inserting records to MongoDB",)
+            logging.info(
+                "Inserting records to MongoDB",
+            )
 
             collection.insert_many(records)
 

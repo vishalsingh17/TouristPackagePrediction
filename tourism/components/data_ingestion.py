@@ -25,18 +25,20 @@ class DataIngestion:
     def split_data_as_train_test(df: DataFrame) -> Tuple[DataFrame, DataFrame]:
         """
         Method Name :   split_data_as_train_test
-        Description :   This method splits the dataframe into train set and test set based on split ratio 
-        
+        Description :   This method splits the dataframe into train set and test set based on split ratio
+
         Output      :   Folder is created in s3 bucket
         On Failure  :   Write an exception log and then raise an exception
-        
+
         Version     :   1.2
         Revisions   :   moved setup to cloud
         """
         logging.info("Entered split_data_as_train_test method of Data_Ingestion class")
 
         try:
-            train_set, test_set = train_test_split(df, test_size=TRAIN_TEST_SPLIT_SIZE, random_state=RANDOM_STATE)
+            train_set, test_set = train_test_split(
+                df, test_size=TRAIN_TEST_SPLIT_SIZE, random_state=RANDOM_STATE
+            )
 
             logging.info("Performed train test split on the dataframe")
 
@@ -52,11 +54,11 @@ class DataIngestion:
     def get_data_from_mongodb(self) -> DataFrame:
         """
         Method Name :   split_data_as_train_test
-        Description :   This method splits the dataframe into train set and test set based on split ratio 
-        
+        Description :   This method splits the dataframe into train set and test set based on split ratio
+
         Output      :   Folder is created in s3 bucket
         On Failure  :   Write an exception log and then raise an exception
-        
+
         Version     :   1.2
         Revisions   :   moved setup to cloud
         """
@@ -68,7 +70,7 @@ class DataIngestion:
             df = self.mongo_op.get_collection_as_dataframe(
                 self.mongo_config.DATABASE_NAME, self.mongo_config.COLLECTION_NAME
             )
-            
+
             logging.info("Got the dataframe from mongodb")
 
             logging.info(
@@ -83,11 +85,11 @@ class DataIngestion:
     def initiate_data_ingestion(self) -> Tuple[DataFrame, DataFrame]:
         """
         Method Name :   initiate_data_ingestion
-        Description :   This method initiates the data ingestion components of training pipeline 
-        
+        Description :   This method initiates the data ingestion components of training pipeline
+
         Output      :   train set and test set are returned as the artifacts of data ingestion components
         On Failure  :   Write an exception log and then raise an exception
-        
+
         Version     :   1.2
         Revisions   :   moved setup to cloud
         """
@@ -97,6 +99,10 @@ class DataIngestion:
             df = self.get_data_from_mongodb()
 
             schema_config = self.utils.read_schema_config_file()
+
+            drop_columns = schema_config["Drop_columns"]
+
+            df = df.drop(drop_columns, axis=1)
 
             logging.info("Got the data from mongodb")
 

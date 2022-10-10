@@ -27,10 +27,10 @@ class S3Operation:
         """
         Method Name :   read_object
         Description :   This method reads the object_name object with kwargs
-        
-        Output      :   The column name is renamed 
+
+        Output      :   The column name is renamed
         On Failure  :   Write an exception log and then raise an exception
-        
+
         Version     :   1.2
         Revisions   :   moved setup to cloud
         """
@@ -56,10 +56,10 @@ class S3Operation:
         """
         Method Name :   get_bucket
         Description :   This method gets the bucket object based on the bucket_name
-        
+
         Output      :   Bucket object is returned based on the bucket name
         On Failure  :   Write an exception log and then raise an exception
-        
+
         Version     :   1.2
         Revisions   :   moved setup to cloud
         """
@@ -80,11 +80,11 @@ class S3Operation:
     ) -> Union[List[object], object]:
         """
         Method Name :   get_file_object
-        Description :   This method gets the file object from bucket_name bucket based on filename 
-        
+        Description :   This method gets the file object from bucket_name bucket based on filename
+
         Output      :   list of objects or object is returned based on filename
         On Failure  :   Write an exception log and then raise an exception
-        
+
         Version     :   1.2
         Revisions   :   moved setup to cloud
         """
@@ -112,10 +112,10 @@ class S3Operation:
         """
         Method Name :   load_model
         Description :   This method loads the model_name model from bucket_name bucket with kwargs
-        
+
         Output      :   list of objects or object is returned based on filename
         On Failure  :   Write an exception log and then raise an exception
-        
+
         Version     :   1.2
         Revisions   :   moved setup to cloud
         """
@@ -147,10 +147,10 @@ class S3Operation:
         """
         Method Name :   create_folder
         Description :   This method creates a folder_name folder in bucket_name bucket
-        
+
         Output      :   Folder is created in s3 bucket
         On Failure  :   Write an exception log and then raise an exception
-        
+
         Version     :   1.2
         Revisions   :   moved setup to cloud
         """
@@ -180,10 +180,10 @@ class S3Operation:
         """
         Method Name :   upload_file
         Description :   This method uploads the from_filename file to bucket_name bucket with to_filename as bucket filename
-        
+
         Output      :   Folder is created in s3 bucket
         On Failure  :   Write an exception log and then raise an exception
-        
+
         Version     :   1.2
         Revisions   :   moved setup to cloud
         """
@@ -224,11 +224,11 @@ class S3Operation:
     ) -> None:
         """
         Method Name :   upload_df_as_csv
-        Description :   This method uploads the dataframe to bucket_filename csv file in bucket_name bucket 
-        
+        Description :   This method uploads the dataframe to bucket_filename csv file in bucket_name bucket
+
         Output      :   Folder is created in s3 bucket
         On Failure  :   Write an exception log and then raise an exception
-        
+
         Version     :   1.2
         Revisions   :   moved setup to cloud
         """
@@ -247,11 +247,11 @@ class S3Operation:
     def get_df_from_object(self, object_: object) -> DataFrame:
         """
         Method Name :   get_df_from_object
-        Description :   This method gets the dataframe from the object_name object 
-        
+        Description :   This method gets the dataframe from the object_name object
+
         Output      :   Folder is created in s3 bucket
         On Failure  :   Write an exception log and then raise an exception
-        
+
         Version     :   1.2
         Revisions   :   moved setup to cloud
         """
@@ -272,11 +272,11 @@ class S3Operation:
     def read_csv(self, filename: str, bucket_name: str) -> DataFrame:
         """
         Method Name :   get_df_from_object
-        Description :   This method gets the dataframe from the object_name object 
-        
+        Description :   This method gets the dataframe from the object_name object
+
         Output      :   Folder is created in s3 bucket
         On Failure  :   Write an exception log and then raise an exception
-        
+
         Version     :   1.2
         Revisions   :   moved setup to cloud
         """
