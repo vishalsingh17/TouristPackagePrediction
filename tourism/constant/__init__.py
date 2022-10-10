@@ -24,7 +24,7 @@ RANDOM_STATE = 42
 
 TARGET_COLUMN = "ProdTaken"
 
-APP_HOST = "localhost"
+APP_HOST = "0.0.0.0"
 
 APP_PORT = 8080
 
